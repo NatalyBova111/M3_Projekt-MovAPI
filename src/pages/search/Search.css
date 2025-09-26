@@ -1,0 +1,101 @@
+/* Список */
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
+}
+
+/* Одна строка результата */
+.row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:inherit;
+  background:#fff;
+  padding:10px 12px;
+  border-radius:14px;
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+
+/* Постер */
+.row .poster{
+  width:72px;          
+  height:108px;       
+  object-fit:cover;
+  border-radius:10px;
+  flex:0 0 auto;
+}
+
+/* Тексты */
+.row .info{
+  flex:1 1 auto;
+  min-width:0;
+}
+.row .title{
+  font-weight:800;
+  font-size:18px;
+  line-height:1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  margin-bottom:4px;
+}
+.row .muted{
+  color:#6b7280;
+  font-size:12px;
+}
+
+/* Кнопка «избранное» (иконка как в футере) */
+.row .fav-icon{
+  margin-left:auto;
+  border:0;
+  background:transparent;
+  padding:4px;
+  cursor:pointer;
+}
+.row .fav-icon img{
+  width:20px;
+  height:20px;
+  display:block;
+  opacity:.7;
+  transition:opacity .15s ease, transform .15s ease, filter .15s ease;
+}
+.row .fav-icon:hover img{ opacity:.95; }
+.row .fav-icon:active img{ transform:translateY(1px); }
+.row .fav-icon:focus-visible{
+  outline:2px solid #ff3b30;
+  outline-offset:2px;
+}
+.row .fav-icon.active img{
+  opacity:1;
+  filter: invert(19%) sepia(94%) saturate(6176%) hue-rotate(354deg) brightness(98%) contrast(108%);
+}
+
+/* Полоса жанров */
+.genre-strip{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:6px;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;
+}
+.genre-strip::-webkit-scrollbar{ display:none; }
+
+.genre-strip .chip{
+  background:#f5f6fa;
+  font-weight:700;
+  white-space:nowrap;
+}
+.genre-strip .chip.active{
+  background:#ff3b30;
+  color:#fff;
+}
+
+/* Низ под футер */
+.container{ padding-bottom: calc(var(--bn-h) + 16px); }
+.bottom-safe{ height: var(--bn-h); }
+

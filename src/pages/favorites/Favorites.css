@@ -1,0 +1,23 @@
+.container.favorites{
+  padding: 20px 16px 92px; 
+} 
+
+ .favorites .h1{
+  font-size: 28px;
+  font-weight: 800;
+  margin: 4px 0 14px;
+} 
+
+/* примитивные стили списка  */
+.favorites .list{ display:flex; flex-direction:column; gap:12px; }
+.favorites .row{
+  display:flex; gap:12px; align-items:center;
+  background:#fff; padding:10px; border-radius:14px;
+  text-decoration:none; color:inherit;
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+.favorites .row img{ width:60px; height:90px; object-fit:cover; border-radius:10px; }
+.favorites .title{ font-weight:800; }
+.favorites .empty{ color:#6b7280; } 
+.container{ padding-bottom: calc(var(--bn-h) + 16px); }
+.bottom-safe{ height: var(--bn-h); }

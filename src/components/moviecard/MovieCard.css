@@ -1,0 +1,3 @@
+.movie-card{ min-width:220px; text-decoration:none; color:inherit; }
+.movie-card .meta{ margin-top:8px; display:flex; align-items:center; justify-content:space-between; }
+.movie-card .title{ font-weight:800; font-size:14px; }

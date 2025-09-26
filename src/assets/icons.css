@@ -1,0 +1,23 @@
+/* единый стиль иконки "избранное" */
+.fav-icon{
+  border: 0;
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fav-icon img{
+  width: 20px;
+  height: 20px;
+  display: block;
+  opacity: .7;
+  transition: opacity .15s ease, transform .15s ease, filter .15s ease;
+}
+
+.fav-icon:hover img{ opacity: .95; }
+.fav-icon:active img{ transform: translateY(1px); }
+
+

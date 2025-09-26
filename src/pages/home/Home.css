@@ -1,0 +1,111 @@
+/* ---- Контейнер страницы ---- */
+.container.home{
+  /* top right/left bottom (учёт футера и safe-area снизу оставляем через inline-style) */
+  /* В TSX уже задан paddingTop/Bottom. Здесь оставляем только «боковые» на всякий. */
+  box-sizing: border-box;
+  min-height: 100dvh;
+}
+
+/* Заголовок Welcome! */
+.home .h1{
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1;
+  margin: 12px 0 20px;
+}
+
+/* Поиск */
+.home .searchbar{
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+/* Полоса жанров */
+.genre-strip-wrap{
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+.genre-strip{
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 36px;                 /* место для стрелок */
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+}
+.genre-strip::-webkit-scrollbar{ display:none; }
+.genre-strip .chip{
+  white-space: nowrap;
+  background: #f5f6fa;
+  font-weight: 700;
+  scroll-snap-align: start;
+}
+.genre-strip .chip.active{
+  background:#ff3b30;
+  color:#fff;
+}
+
+/* стрелки (ПК) */
+.genre-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:28px; height:28px; border-radius:999px; border:0;
+  background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.12);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; z-index:2;
+}
+.genre-arrow.left{ left:2px; }
+.genre-arrow.right{ right:2px; }
+.genre-arrow:active{ transform:translateY(-50%) scale(.98); }
+
+/* стрелки убираем на мобильных */
+@media (max-width:600px){
+  .genre-strip{ padding:8px 0; }
+  .genre-arrow{ display:none; }
+}
+
+/* Заголовок секции */
+.row-title{
+  margin: 16px 0 12px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.row-title > span{ font-weight:800; font-size:16px; }
+.row-title .see-all{ color:#ff3b30; text-decoration:none; font-weight:700; font-size:13px; }
+
+/* Дополнительная «просадка» перед каруселью,
+   чтобы карточки фильмов были ниже экрана */
+.hero-gap{ height: 12px; }
+
+/* skeleton/карусель 16:9 */
+.hero-skeleton{
+  border-radius: 16px;
+  overflow: hidden;
+  background: #eef1f5;
+  aspect-ratio: 16 / 9;
+}
+@supports not (aspect-ratio: 16 / 9){
+  .hero-skeleton{ padding-top:56.25%; }
+}
+
+/* Убираем полоску скролла у карусели на десктопе */
+@media (pointer: fine){
+  .home .hero-carousel,
+  .home .hero-carousel .viewport{
+    overflow-x: hidden;
+  }
+  .home .hero-carousel .viewport::-webkit-scrollbar{ display:none; }
+  .home .hero-carousel,
+  .home .hero-carousel * {
+    scrollbar-width: none;
+  }
+  .home .hero-carousel::-webkit-scrollbar,
+  .home .hero-carousel *::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+/* низ под футер */
+.bottom-safe{ height: var(--bn-h); }

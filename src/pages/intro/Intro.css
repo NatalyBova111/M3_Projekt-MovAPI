@@ -1,0 +1,108 @@
+/* экран  */
+.intro{
+  min-height: 100svh;
+  background: #fff;
+  display: grid;
+  place-items: start center;
+}
+
+/* рамка под макет */
+.intro-frame{
+  position: relative;
+  width: 428px;
+  height: 932px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* верхний градиент */
+.intro-hero-bg{
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 428px;
+  height: 557px;
+  background: radial-gradient(150% 130% at 50% -15%, #f6a9a9 0%, #ef6a6a 35%, #ffffff 72%);
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+/* карточки */
+.intro-card{
+  position: absolute;
+  object-fit: contain;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 38px rgba(0,0,0,.20);
+}
+.intro-card.home{
+  width: 253.0185px; height: 548.2068px; left: 30.89px; top: 74.28px;
+  transform: rotate(-5.14deg); z-index: 1;
+}
+.intro-card.desc{
+  width: 253.5336px; height: 548.5321px; left: 130.28px; top: 119px;
+  transform: rotate(5.14deg); z-index: 2;
+}
+
+/* нижняя белая панель */
+.intro-sheet{
+  position: absolute;
+  left: 0; top: 557px;
+  width: 428px; height: 369px;
+  background: #fff;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 18px 48px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ====== Типографика ====== */
+
+.intro-title{
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;        /* Bold */
+  font-size: 28px;
+  line-height: 1;          /* 100% */
+  letter-spacing: 0;
+  text-align: center;
+  margin: 4px 0 12px;
+  color: #0b0b0b;
+}
+
+.intro-subtitle{
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;        /* Regular */
+  font-size: 18px;
+  line-height: 1;          /* 100% */
+  letter-spacing: 0;
+  text-align: center;
+  color: #6b7280;
+  margin: 0 0 0;           
+  max-width: 340px;       
+}
+
+/* ====== Кнопка ====== */
+.intro-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 176px;
+  height: 46px;
+  border: 0;
+  border-radius: 16px;
+  font-weight: 800;
+  background: #ff3b30;
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(255,59,48,.28);
+  cursor: pointer;
+
+  margin-top: auto;        /* прижать к низу */
+}
+.intro-btn:active{ transform: translateY(1px); }
+
+
