@@ -1,44 +1,41 @@
 import './BottomNav.css';
 import { NavLink } from 'react-router-dom';
+import homeIco from '../../assets/Home1.png';
+import favIco  from '../../assets/Vector.png';
+import dlIco   from '../../assets/Vector1.png';
+import profIco from '../../assets/Profile.png';
 
-const items = [
-  { to: '/home',      label: 'Home',      icon: '/img/Home1.png'    },
-  { to: '/favorites', label: 'Favorites', icon: '/img/Vector.png'  },
-  { to: '/downloads', label: 'Downloads', icon: '/img/Vector1.png' },
-  { to: '/profile',   label: 'Profile',   icon: '/img/Profile.png' },
-]
+type Item = { to: string; label: 'Home'|'Favorites'|'Downloads'|'Profile'; icon: string };
+
+const items: Item[] = [
+  { to: '/home',      label: 'Home',      icon: homeIco },
+  { to: '/favorites', label: 'Favorites', icon: favIco  },
+  { to: '/home',      label: 'Downloads', icon: dlIco   }, // ведут на /home
+  { to: '/home',      label: 'Profile',   icon: profIco }, // ведут на /home
+];
 
 export default function BottomNav() {
   return (
-    <nav
-      className="bottomnav"
-      style={{ display: 'flex' }}          // <= гарантируем flex
-      aria-label="Bottom navigation"
-    >
-      {items.map((it) => {
-        // const isHome = it.label === 'Home';
-        return (
-          <NavLink
-            key={it.to}
-            to={it.to}
-            end={it.to === '/'}
-            className={({ isActive }) =>
-              `bn-item ${it.label.toLowerCase()}${isActive ? ' active' : ''}`
-            }
-            aria-label={it.label}
-            title={it.label}
-          >
-
-
-            {/* {isHome && <span className="home-bg" aria-hidden="true" />} */}
-
-
-
-            <img src={it.icon} alt="" aria-hidden="true" />
-            <span className="sr-only">{it.label}</span>
-          </NavLink>
-        );
-      })}
+    <nav className="bottomnav" style={{ display: 'flex' }} aria-label="Bottom navigation">
+      {items.map((it) => (
+        <NavLink
+          key={it.label}
+          to={it.to}
+          end={it.label === 'Home'} // Home активен только ровно на /home
+          className={({ isActive }) => {
+            // Разрешаем активный стиль только для Home и Favorites
+            const allowActive =
+              (it.label === 'Home' && isActive) ||
+              (it.label === 'Favorites' && isActive);
+            return `bn-item ${it.label.toLowerCase()}${allowActive ? ' active' : ''}`;
+          }}
+          aria-label={it.label}
+          title={it.label}
+        >
+          <img src={it.icon} alt="" aria-hidden="true" />
+          <span className="sr-only">{it.label}</span>
+        </NavLink>
+      ))}
     </nav>
   );
 }

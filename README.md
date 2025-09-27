@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 🎬 Projekt — Movie API App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Eine Web-App zur Filmsuche und -anzeige, erstellt mit **React + TypeScript + Vite** und der [TMDB API](https://www.themoviedb.org/documentation/api).
 
-## React Compiler
+## ✨ Funktionen
+- Startablauf **Splash → Intro → Home**
+- Filmsuche über die TMDB API
+- Filterung nach Genres
+- Detailseite mit Poster, Beschreibung und Trailer
+- Favoriten (**Favorites**) mit lokalem Speichern
+- Navigation mit fester unterer Fußleiste
+- Responsives Design (Mobile First)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🛠️ Technologien
+- [React 18](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- Context API 
+- CSS 
 
-## Expanding the ESLint configuration
+## 📦 Build & Deployment
+Öffne die App hier:  
+👉 [https://NatalyBova111.github.io/M3_Projekt-MovAPI/](https://NatalyBova111.github.io/M3_Projekt-MovAPI/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Screenshots
+### Splash
+![Splash](docs/screenshots/splash.png)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Intro
+![Intro](docs/screenshots/intro.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Home
+![Home](docs/screenshots/home.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Search
+![Search](docs/screenshots/search.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Details
+![Details](docs/screenshots/details.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Favorites
+![Favorites](docs/screenshots/favorites.png)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 📄 Lizenz
+Dieses Projekt wurde zu Lernzwecken erstellt.  
+Es nutzt die [TMDB API](https://www.themoviedb.org/) (alle Rechte an Daten und Bildern liegen bei TMDB).

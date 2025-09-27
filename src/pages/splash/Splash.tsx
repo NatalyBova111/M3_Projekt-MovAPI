@@ -7,15 +7,17 @@ export default function Splash() {
 
   useEffect(() => {
     const t = setTimeout(() => {
-      // КУДА переходить: на Intro или сразу на Home
       nav('/intro', { replace: true })
-    }, 1500) // длительность сплэша (мс)
+    }, 1500)
     return () => clearTimeout(t)
   }, [nav])
 
   return (
-    <div className="splash" onClick={() => nav('/intro', { replace: true })}>
-      <div className="logo">.MOV</div>
+    <div className="splash">
+      {/* «телефонная» рамка фиксированной ширины, центрированная */}
+      <div className="splash-frame" onClick={() => nav('/intro', { replace: true })}>
+        <div className="logo">.MOV</div>
+      </div>
     </div>
   )
 }

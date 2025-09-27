@@ -13,6 +13,8 @@ import BottomNav from '../../components/bottomnav/BottomNav'
 import Chip from '../../components/chip/Chip'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { useApp } from '../../store/AppContext'
+import favPng from '../../assets/Vector.png';
+
 
 export default function Search() {
   const { state, dispatch } = useApp()
@@ -240,7 +242,7 @@ export default function Search() {
               title="Add to favorites"
               type="button"
             >
-              <img src="/img/Vector.png" alt="" aria-hidden="true" />
+              <img src={favPng} alt="" aria-hidden="true" />
             </button>
           </Link>
         ))}
