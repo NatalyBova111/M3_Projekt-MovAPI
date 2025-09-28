@@ -48,7 +48,6 @@ export default function MovieDetails() {
 
   return (
     <div className="details">
-      {/* Hero с фоном и мягким градиентом снизу (реализовано в CSS через ::after) */}
       <div
         className="hero"
         style={{ backgroundImage: `url(${backdrop})` }}
@@ -63,7 +62,6 @@ export default function MovieDetails() {
         </button>
       </div>
 
-      {/* Тело страницы слегка «заезжает» на градиент */}
       <div className="container body">
         <div className="title-wrap">
           <h1 className="title">{title}</h1>
@@ -97,8 +95,6 @@ export default function MovieDetails() {
             Trailer not available
           </button>
         )}
-
-        {/* футер  */}
         <div className="bottom-safe" />
         <BottomNav />
       </div>
