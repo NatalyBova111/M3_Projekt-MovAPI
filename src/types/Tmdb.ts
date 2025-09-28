@@ -4,10 +4,10 @@ export type TMDBGenreList = { genres: TMDBGenre[] };
 export type TMDBMovie = {
   id: number;
   title?: string;
-  name?: string;                // для TV (в search/multi)
+  name?: string;                
   overview: string;
   release_date?: string;
-  first_air_date?: string;      // для TV (в search/multi)
+  first_air_date?: string;     
   vote_average: number;
   genre_ids?: number[];
   poster_path: string | null;
