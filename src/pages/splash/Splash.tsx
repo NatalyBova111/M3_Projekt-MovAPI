@@ -14,7 +14,7 @@ export default function Splash() {
 
   return (
     <div className="splash">
-      {/* «телефонная» рамка фиксированной ширины, центрированная */}
+
       <div className="splash-frame" onClick={() => nav('/intro', { replace: true })}>
         <div className="logo">.MOV</div>
       </div>
