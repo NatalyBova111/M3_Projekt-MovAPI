@@ -3,11 +3,11 @@ import type { TMDBMovie } from '../types/Tmdb';
 export type Genre = 'Action' | 'Comedy' | 'Horror';
 
 export type AppState = {
-  ready: boolean;          // когда true — уходим со Splash
-  query: string;           // строка поиска
+  ready: boolean;          
+  query: string;           
   activeGenre: Genre;
   trendingCache: TMDBMovie[];  
-  favorites: number[];     // избранное (id фильмов)
+  favorites: number[];     
 };
 
 export type Action =
@@ -21,7 +21,7 @@ export const initialState: AppState = {
   ready: false,
   query: '',
   activeGenre: 'Action',
-  trendingCache: [],     // тип выведется как TMDBMovie[]
+  trendingCache: [],    
   favorites: [],
 };
 
