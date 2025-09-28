@@ -16,8 +16,6 @@ export default function Home() {
 
   const [genres, setGenres] = useState<TMDBGenre[]>([])
   const stripRef = useRef<HTMLDivElement | null>(null)
-
-  // горизонтальный скролл жанров колесом (на десктопе удобно)
   const onGenreWheel: React.WheelEventHandler<HTMLDivElement> = (e) => {
     const el = stripRef.current; if (!el) return
     if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
@@ -31,7 +29,6 @@ export default function Home() {
     el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: 'smooth' })
   }
 
-  // Тренды (кэш)
   useEffect(() => {
     if (state.trendingCache.length) return
     (async () => {
@@ -40,7 +37,7 @@ export default function Home() {
     })()
   }, [state.trendingCache.length, dispatch])
 
-  // Жанры
+ 
   useEffect(() => {
     (async () => {
       const g = await endpoints.genres() as TMDBGenreList
@@ -48,7 +45,7 @@ export default function Home() {
     })()
   }, [])
 
-  // Ввод на Home 
+
   const handleHomeSearchChange = (v: string) => {
     dispatch({ type: 'SET_QUERY', payload: v })
   }
@@ -75,7 +72,6 @@ export default function Home() {
         onSubmit={handleHomeSearchSubmit}
       />
 
-      {/* Полоса всех жанров */}
       <div className="genre-strip-wrap">
         <button className="genre-arrow left" onClick={()=>scrollGenres(-1)} aria-label="Scroll genres left" type="button">‹</button>
 
@@ -96,7 +92,6 @@ export default function Home() {
         <button className="genre-arrow right" onClick={()=>scrollGenres(1)} aria-label="Scroll genres right" type="button">›</button>
       </div>
 
-      {/* Доп. отступ перед каруселью, чтобы карточки фильмов были НИЖЕ */}
       <div className="hero-gap" />
 
       <div className="row-title">
