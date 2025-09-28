@@ -21,12 +21,10 @@ export default function Search() {
   const [params] = useSearchParams()
   const nav = useNavigate()
 
-  // Режим страницы
   const genreId = params.get('genreId')
   const mode: 'trending' | 'genre' | 'search' =
     state.query ? 'search' : (genreId ? 'genre' : 'trending')
 
-  // ===== ЖАНРЫ (полоса как на Home) =====
   const [genres, setGenres] = useState<TMDBGenre[]>([])
   useEffect(() => {
     (async () => {
@@ -37,7 +35,6 @@ export default function Search() {
 
   const stripRef = useRef<HTMLDivElement | null>(null)
 
-  // Горизонтальный скролл колесом (на десктопе удобно)
   const onGenreWheel: React.WheelEventHandler<HTMLDivElement> = (e) => {
     const el = stripRef.current
     if (!el) return
@@ -48,30 +45,28 @@ export default function Search() {
   }
 
   const goGenre = (id: number, name: string) => {
-    // При переходе по жанру — очищаем текстовый поиск
+   
     dispatch({ type: 'SET_QUERY', payload: '' })
     nav(`/search?genreId=${id}&genreName=${encodeURIComponent(name)}`)
   }
 
-  // Автопрокрутка к активному жанру
   useEffect(() => {
     if (!genreId || !stripRef.current || !genres.length) return
     const el = stripRef.current.querySelector<HTMLElement>(`[data-genre="${genreId}"]`)
     if (!el) return
-    // мгновенно центрируем…
+  
     el.scrollIntoView({ inline: 'center', block: 'nearest' })
-    // …и следом мягкая доводка
+  
     requestAnimationFrame(() => {
       el.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' })
     })
   }, [genreId, genres.length])
 
-  // ===== ДАННЫЕ СПИСКА =====
   const [items, setItems] = useState<TMDBMovie[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Пагинация для genre/trending
+
   const [page, setPage] = useState(1)
   const [hasMore, setHasMore] = useState(true)
   const loaderRef = useRef<HTMLDivElement | null>(null)
@@ -187,7 +182,7 @@ export default function Search() {
         }}
       />
 
-      {/* Полоса жанров */}
+
       <div
         ref={stripRef}
         className="genre-strip"
@@ -230,7 +225,6 @@ export default function Search() {
               </div>
             </div>
 
-            {/* единая иконка избранного */}
             <button
               className={`fav-icon ${state.favorites.includes(it.id) ? 'active' : ''}`}
               onClick={(e)=>{
