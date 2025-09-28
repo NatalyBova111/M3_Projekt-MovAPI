@@ -8,9 +8,6 @@ export default function Intro() {
   const nav = useNavigate()
 
   const start = () => {
-    // запоминаем, что Intro уже видели
-    // localStorage.setItem('seenIntro', '1')
-    // переходим на главную без возможности вернуться назад на Intro
     nav('/home', { replace: true })
   }
 
