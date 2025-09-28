@@ -10,8 +10,8 @@ type Item = { to: string; label: 'Home'|'Favorites'|'Downloads'|'Profile'; icon:
 const items: Item[] = [
   { to: '/home',      label: 'Home',      icon: homeIco },
   { to: '/favorites', label: 'Favorites', icon: favIco  },
-  { to: '/home',      label: 'Downloads', icon: dlIco   }, // ведут на /home
-  { to: '/home',      label: 'Profile',   icon: profIco }, // ведут на /home
+  { to: '/home',      label: 'Downloads', icon: dlIco   }, 
+  { to: '/home',      label: 'Profile',   icon: profIco }, 
 ];
 
 export default function BottomNav() {
@@ -21,9 +21,9 @@ export default function BottomNav() {
         <NavLink
           key={it.label}
           to={it.to}
-          end={it.label === 'Home'} // Home активен только ровно на /home
+          end={it.label === 'Home'} 
           className={({ isActive }) => {
-            // Разрешаем активный стиль только для Home и Favorites
+         
             const allowActive =
               (it.label === 'Home' && isActive) ||
               (it.label === 'Favorites' && isActive);
