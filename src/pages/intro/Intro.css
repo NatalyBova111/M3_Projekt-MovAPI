@@ -46,8 +46,10 @@
 /* нижняя белая панель */
 .intro-sheet{
   position: absolute;
-  left: 0; top: 557px;
-  width: 428px; height: 369px;
+  left: 0; 
+  top: 540px;               
+  width: 428px; 
+  height: 360px;             
   background: #fff;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
@@ -56,7 +58,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 18px 48px;
+  padding: 24px 18px 20px;   
   box-sizing: border-box;
   text-align: center;
 }
@@ -65,25 +67,25 @@
 
 .intro-title{
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 700;        /* Bold */
+  font-weight: 700;       
   font-size: 28px;
-  line-height: 1;          /* 100% */
+  line-height: 1;          
   letter-spacing: 0;
   text-align: center;
-  margin: 4px 0 12px;
+  margin: 4px 0 10px;
   color: #0b0b0b;
 }
 
 .intro-subtitle{
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 400;        /* Regular */
+  font-weight: 400;       
   font-size: 18px;
-  line-height: 1;          /* 100% */
+  line-height: 1;        
   letter-spacing: 0;
   text-align: center;
   color: #6b7280;
-  margin: 0 0 0;           
-  max-width: 340px;       
+  margin: 0 0 12px;        
+  max-width: 340px;
 }
 
 /* ====== Кнопка ====== */
@@ -100,9 +102,21 @@
   color: #fff;
   box-shadow: 0 12px 24px rgba(255,59,48,.28);
   cursor: pointer;
-
-  margin-top: auto;        /* прижать к низу */
+  margin-top: 14px;        
 }
 .intro-btn:active{ transform: translateY(1px); }
 
+/* ====== Адаптация для низких экранов ====== */
+@media (max-height: 740px){
+  .intro-sheet{ top: 520px; height: 350px; }
+  .intro-title{ font-size: 26px; }
+  .intro-subtitle{ font-size: 17px; }
+}
+
+@media (max-height: 680px){
+  .intro-sheet{ top: 500px; height: 340px; }
+  .intro-title{ font-size: 24px; }
+  .intro-subtitle{ font-size: 16px; }
+  .intro-btn{ height: 44px; }
+}
 
