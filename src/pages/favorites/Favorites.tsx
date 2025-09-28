@@ -46,7 +46,6 @@ export default function Favorites(){
         ))}
         {!loading && !items.length && <div className="muted" style={{marginTop:12}}>No favorites yet</div>}
       </div>
-      {/* место под футер + сам футер */}
       <div className="bottom-safe" />
       <BottomNav />
     </div> 
