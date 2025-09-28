@@ -18,7 +18,6 @@
   padding: 6px 10px;
 }
 
-/* Базово: 16:9 блок по центру (десктоп и альбомная ориентация) */
 .player-frame{
   position: relative;
   width: min(100vw, 900px);
@@ -33,20 +32,19 @@
   border: 0;
 }
 
-/* Мобильный портрет: делаем «во весь экран» без чёрных полей */
 @media (max-width: 480px) and (orientation: portrait){
   .player-frame{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100vh;     /* ширина контейнера = высота экрана */
-    height: 100vw;    /* высота контейнера = ширина экрана */
+    width: 100vh;    
+    height: 100vw;    
     transform: translate(-50%, -50%) rotate(90deg);
     transform-origin: center;
     overflow: hidden;
   }
   .player-frame iframe{
-    /* ширина ролика = (16/9)*100vh, чтобы закрыть высоту экрана */
+   
     width: 177.78vh;  /* 100vh * 16 / 9 */
     height: 100vh;
     position: absolute;
