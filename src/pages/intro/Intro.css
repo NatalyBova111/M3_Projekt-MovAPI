@@ -1,4 +1,3 @@
-/* экран  */
 .intro{
   min-height: 100svh;
   background: #fff;
@@ -6,7 +5,6 @@
   place-items: start center;
 }
 
-/* рамка под макет */
 .intro-frame{
   position: relative;
   width: 428px;
@@ -15,7 +13,6 @@
   background: #fff;
 }
 
-/* верхний градиент */
 .intro-hero-bg{
   position: absolute;
   inset: 0 auto auto 0;
@@ -26,7 +23,6 @@
   border-bottom-right-radius: 32px;
 }
 
-/* карточки */
 .intro-card{
   position: absolute;
   object-fit: contain;
@@ -43,7 +39,6 @@
   transform: rotate(5.14deg); z-index: 2;
 }
 
-/* нижняя белая панель */
 .intro-sheet{
   position: absolute;
   left: 0; 
@@ -63,7 +58,6 @@
   text-align: center;
 }
 
-/* ====== Типографика ====== */
 
 .intro-title{
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -88,7 +82,6 @@
   max-width: 340px;
 }
 
-/* ====== Кнопка ====== */
 .intro-btn{
   display: inline-flex;
   align-items: center;
@@ -106,7 +99,6 @@
 }
 .intro-btn:active{ transform: translateY(1px); }
 
-/* ====== Адаптация для низких экранов ====== */
 @media (max-height: 740px){
   .intro-sheet{ top: 520px; height: 350px; }
   .intro-title{ font-size: 26px; }
