@@ -10,7 +10,7 @@ import Favorites from './pages/favorites/Favorites'
 export default function App(){
   return (
     <Routes>
-      {/* Всегда начинаем со Splash */}
+     
       <Route path="/" element={<Navigate to="/splash" replace />} />
 
       <Route path="/splash" element={<Splash />} />
@@ -22,7 +22,7 @@ export default function App(){
       <Route path="/trailer/:id" element={<Trailer />} />
       <Route path="/favorites" element={<Favorites />} />
 
-      {/* Фолбэк */}
+    
       <Route path="*" element={<Navigate to="/home" replace />} />
     </Routes>
   )
