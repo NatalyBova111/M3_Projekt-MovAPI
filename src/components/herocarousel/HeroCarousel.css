@@ -1,4 +1,4 @@
-/* контейнер карусели */
+
 .hero-carousel{
   position: relative;
   border-radius: 16px;
@@ -6,7 +6,7 @@
   background: #eef1f5;
 }
 
-/* лента слайдов */
+
 .hero-carousel .track{
   display: flex;
   overflow-x: auto;
@@ -14,17 +14,17 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* один слайд занимает всю ширину экрана */
+
 .hero-carousel .slide{
   position: relative;
   flex: 0 0 100%;
   scroll-snap-align: center;
-  /* фиксируем правильную пропорцию */
+
   aspect-ratio: 16 / 9;
   background: #e9edf2;
 }
 
-/* Fallback для старых браузеров без aspect-ratio */
+
 @supports not (aspect-ratio: 16 / 9){
   .hero-carousel .slide::before{
     content: "";
@@ -33,7 +33,7 @@
   }
 }
 
-/* изображение — строго cover по всей карточке */
+
 .hero-carousel .media{
   position: absolute;
   inset: 0;
@@ -43,7 +43,7 @@
   display: block;
 }
 
-/* подпись поверх изображения */
+
 .hero-carousel .caption{
   position: absolute;
   left: 12px; right: 12px; bottom: 10px;
@@ -57,7 +57,7 @@
   margin-bottom: 4px;
 }
 
-/* стрелки (ПК) */
+
 .hero-carousel .nav{
   position: absolute;
   top: 50%;
@@ -75,10 +75,10 @@
 .hero-carousel .nav.next{ right: 8px; }
 
 @media (max-width: 600px){
-  .hero-carousel .nav{ display: none; } /* на мобилках лишнее */
+  .hero-carousel .nav{ display: none; } 
 }
 
-/* точки */
+
 .hero-carousel .dots{
   display: flex;
   gap: 6px;
@@ -95,49 +95,49 @@
   width: 16px; /* активная — «капсула» */
 }
 
-/* сам карусельный блок не должен растягивать страницу по X */
+
 .hero-carousel{
   position: relative;
-  overflow: hidden;              /* скрываем любые вылазящие элементы */
+  overflow: hidden;              
 }
 
-/* «вьюпорт» со слайдами — имя класса может быть у тебя track/viewport/slides */
+
 .hero-carousel .viewport{
-  overflow-x: auto;              /* мобайл: свайп по X */
+  overflow-x: auto;            
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
 }
 
-/* десктоп: свайп не нужен, убираем скроллбар полностью */
+
 @media (pointer: fine){
   .hero-carousel .viewport{
-    overflow-x: hidden;          /* скрыть горизонтальный скроллбар */
+    overflow-x: hidden;        
     scrollbar-width: none;       /* Firefox */
   }
   .hero-carousel .viewport::-webkit-scrollbar{ display: none; } /* Chrome/Safari */
 }
 
-/* корневой блок карусели */
+
 .hero-carousel{
   position: relative;
-  overflow: hidden;               /* чтобы ничего не «выпирало» */
+  overflow: hidden;            
 }
 
 /* вьюпорт/лента со слайдами  */
 .hero-carousel .viewport,
 .hero-carousel .slides,
 .hero-carousel .track{
-  overflow-x: auto;               /* мобайл — свайп */
+  overflow-x: auto;               
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
 }
 
-/* DESKTOP: скрыть горизонтальный скролл у ленты */
+/* DESKTOP */
 @media (pointer: fine){
   .hero-carousel .viewport,
   .hero-carousel .slides,
   .hero-carousel .track{
-    overflow-x: hidden;           /* убрать полоску */
+    overflow-x: hidden;           
     scrollbar-width: none;        /* Firefox */
   }
   .hero-carousel .viewport::-webkit-scrollbar,
@@ -147,7 +147,7 @@
   }
 }
 
-/* контейнер с «точками»: никогда не должен иметь overflow:auto */
+
 .hero-carousel .dots{
   display: flex;
   justify-content: center;
