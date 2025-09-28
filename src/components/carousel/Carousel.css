@@ -1,21 +1,21 @@
 .carousel::-webkit-scrollbar{ display:none; }
-/* сам карусельный блок не должен растягивать страницу по X */
+
 .hero-carousel{
   position: relative;
-  overflow: hidden;              /* скрываем любые вылазящие элементы */
+  overflow: hidden;            
 }
 
-/* «вьюпорт» со слайдами  */
+
 .hero-carousel .viewport{
-  overflow-x: auto;              /* мобайл: свайп по X */
+  overflow-x: auto;             
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
 }
 
-/* десктоп: свайп не нужен, убираем скроллбар полностью */
+
 @media (pointer: fine){
   .hero-carousel .viewport{
-    overflow-x: hidden;          /* скрыть горизонтальный скроллбар */
+    overflow-x: hidden;          
     scrollbar-width: none;       /* Firefox */
   }
   .hero-carousel .viewport::-webkit-scrollbar{ display: none; } /* Chrome/Safari */
