@@ -11,7 +11,7 @@ export default function HeroCarousel({ items }: Props) {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const [index, setIndex] = useState(0);
 
-  // следим за горизонтальным скроллом, чтобы подсвечивать точки
+
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
