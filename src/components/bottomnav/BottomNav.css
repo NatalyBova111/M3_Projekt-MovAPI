@@ -1,9 +1,9 @@
-/* общая высота футера */
+
 :root{ --bn-h: 80px; } 
 
-/* Сильный селектор: nav.bottomnav — перебивает большинство коллизий */
+
 nav.bottomnav{
-  /* убираем возможные grid-настройки */
+
   display: flex !important;
   grid-template-columns: initial !important;
   grid-auto-flow: initial !important;
@@ -11,7 +11,7 @@ nav.bottomnav{
   justify-content: space-around;
   align-items: center;
 
-  /* КЛЮЧЕВОЕ: фиксируем у нижней кромки окна */
+
   position: fixed;
   bottom: 0; left: 0; right: 0;
   width: 100%;
@@ -25,7 +25,7 @@ nav.bottomnav{
   z-index: 100;
 }
 
-/* элементы */
+
 nav.bottomnav .bn-item{
   position: relative;
   display:flex;
@@ -36,7 +36,7 @@ nav.bottomnav .bn-item{
   height: 100%;
 }
 
-/* Home — фиксированный размер капсулы  */
+
 nav.bottomnav .bn-item.home{
   flex: none !important;   
   width: 98px;
@@ -66,7 +66,7 @@ nav.bottomnav .bn-item.active img{
   filter: invert(19%) sepia(94%) saturate(6176%) hue-rotate(354deg) brightness(98%) contrast(108%);
 }
 
-/* текст для скринридеров */
+
 nav.bottomnav .sr-only{
   position:absolute !important;
   width:1px; height:1px;
@@ -74,15 +74,15 @@ nav.bottomnav .sr-only{
   overflow:hidden; clip:rect(0,0,0,0);
   white-space:nowrap; border:0;
 }
-/* максимальная ширина макета  */
+
 :root{ --app-max-w: 430px; }
 
-/* На широких экранах центрируем и ограничиваем ширину футера */
+
 @media (min-width: 640px){
   nav.bottomnav{
     width: min(100vw, var(--app-max-w));
     left: 50%;
-    right: auto;           /* важно: убираем right:0 */
+    right: auto;           
     transform: translateX(-50%);
 
   }
