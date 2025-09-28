@@ -27,13 +27,13 @@ Eine Web-App zur Filmsuche und -anzeige, erstellt mit **React + TypeScript + Vit
 
 ## 📸 Screenshots
 ### Splash
-![Splash](docs/screenshots/splash.png)
+<img width="262" height="571" alt="image" src="https://github.com/user-attachments/assets/b7363daf-ffd6-4205-b9ab-7ad2e419729e" />
 
 ### Intro
 ![Intro](docs/screenshots/intro.png)
 
 ### Home
-![Home](docs/screenshots/home.png)
+<img width="267" height="569" alt="image" src="https://github.com/user-attachments/assets/ca054208-31b3-4cbc-8563-08fa098db048" />
 
 ### Search
 ![Search](docs/screenshots/search.png)
