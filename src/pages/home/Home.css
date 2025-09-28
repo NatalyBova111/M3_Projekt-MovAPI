@@ -1,4 +1,3 @@
-/* ---- Контейнер страницы ---- */
 .container.home{
   /* top right/left bottom (учёт футера и safe-area снизу оставляем через inline-style) */
   /* В TSX уже задан paddingTop/Bottom. Здесь оставляем только «боковые» на всякий. */
@@ -6,7 +5,6 @@
   min-height: 100dvh;
 }
 
-/* Заголовок Welcome! */
 .home .h1{
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
@@ -15,13 +13,11 @@
   margin: 12px 0 20px;
 }
 
-/* Поиск */
 .home .searchbar{
   margin-top: 8px;
   margin-bottom: 20px;
 }
 
-/* Полоса жанров */
 .genre-strip-wrap{
   position: relative;
   margin-top: 10px;
@@ -31,7 +27,7 @@
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  padding: 8px 36px;                 /* место для стрелок */
+  padding: 8px 36px;                 
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x proximity;
   touch-action: pan-x;
@@ -49,7 +45,6 @@
   color:#fff;
 }
 
-/* стрелки (ПК) */
 .genre-arrow{
   position:absolute; top:50%; transform:translateY(-50%);
   width:28px; height:28px; border-radius:999px; border:0;
@@ -61,13 +56,11 @@
 .genre-arrow.right{ right:2px; }
 .genre-arrow:active{ transform:translateY(-50%) scale(.98); }
 
-/* стрелки убираем на мобильных */
 @media (max-width:600px){
   .genre-strip{ padding:8px 0; }
   .genre-arrow{ display:none; }
 }
 
-/* Заголовок секции */
 .row-title{
   margin: 16px 0 12px;
   display:flex; justify-content:space-between; align-items:center;
@@ -75,11 +68,8 @@
 .row-title > span{ font-weight:800; font-size:16px; }
 .row-title .see-all{ color:#ff3b30; text-decoration:none; font-weight:700; font-size:13px; }
 
-/* Дополнительная «просадка» перед каруселью,
-   чтобы карточки фильмов были ниже экрана */
 .hero-gap{ height: 12px; }
 
-/* skeleton/карусель 16:9 */
 .hero-skeleton{
   border-radius: 16px;
   overflow: hidden;
@@ -90,7 +80,6 @@
   .hero-skeleton{ padding-top:56.25%; }
 }
 
-/* Убираем полоску скролла у карусели на десктопе */
 @media (pointer: fine){
   .home .hero-carousel,
   .home .hero-carousel .viewport{
@@ -107,5 +96,4 @@
   }
 }
 
-/* низ под футер */
 .bottom-safe{ height: var(--bn-h); }
