@@ -1,4 +1,4 @@
-/* Список */
+
 .list{
   display:flex;
   flex-direction:column;
@@ -6,7 +6,6 @@
   margin-top:14px;
 }
 
-/* Одна строка результата */
 .row{
   display:flex;
   align-items:center;
@@ -19,7 +18,6 @@
   box-shadow:0 4px 10px rgba(0,0,0,.05);
 }
 
-/* Постер */
 .row .poster{
   width:72px;          
   height:108px;       
@@ -28,7 +26,6 @@
   flex:0 0 auto;
 }
 
-/* Тексты */
 .row .info{
   flex:1 1 auto;
   min-width:0;
@@ -47,7 +44,6 @@
   font-size:12px;
 }
 
-/* Кнопка «избранное» (иконка как в футере) */
 .row .fav-icon{
   margin-left:auto;
   border:0;
@@ -73,7 +69,6 @@
   filter: invert(19%) sepia(94%) saturate(6176%) hue-rotate(354deg) brightness(98%) contrast(108%);
 }
 
-/* Полоса жанров */
 .genre-strip{
   margin-top:12px;
   display:flex;
@@ -95,7 +90,6 @@
   color:#fff;
 }
 
-/* Низ под футер */
 .container{ padding-bottom: calc(var(--bn-h) + 16px); }
 .bottom-safe{ height: var(--bn-h); }
 
