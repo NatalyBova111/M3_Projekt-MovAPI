@@ -8,7 +8,6 @@
   margin: 4px 0 14px;
 } 
 
-/* примитивные стили списка  */
 .favorites .list{ display:flex; flex-direction:column; gap:12px; }
 .favorites .row{
   display:flex; gap:12px; align-items:center;
