@@ -1,6 +1,4 @@
 .container.home{
-  /* top right/left bottom (учёт футера и safe-area снизу оставляем через inline-style) */
-  /* В TSX уже задан paddingTop/Bottom. Здесь оставляем только «боковые» на всякий. */
   box-sizing: border-box;
   min-height: 100dvh;
 }
